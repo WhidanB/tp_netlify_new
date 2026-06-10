@@ -96,7 +96,7 @@ describe('toggleTask', () => {
   });
 });
 
- describe('deleteTask', () => {
+describe('deleteTask', () => {
   it('removes the task with the given id', () => {
     const tasks = [
       { id: '1', title: 'Task 1', completed: false },
@@ -109,7 +109,7 @@ describe('toggleTask', () => {
     expect(result.find((t) => t.id === '1')).toBeUndefined();
   });
 
- it('keeps other tasks unchanged', () => {
+  it('keeps other tasks unchanged', () => {
     const tasks = [
       { id: '1', title: 'Task 1', completed: false },
       { id: '2', title: 'Task 2', completed: true },
@@ -128,7 +128,7 @@ describe('toggleTask', () => {
 
     const result = deleteTask(tasks, 'nonexistent');
 
-    expect(result).toHaveLength(0);
+    expect(result).toHaveLength(2);
   });
 });
 
